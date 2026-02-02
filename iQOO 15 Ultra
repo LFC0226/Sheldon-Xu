@@ -1,1 +1,850 @@
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivo人文影像馆 · iQOO 15 Ultra品鉴会邀请</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        
+        body {
+            background: #000000;
+            color: #ffffff;
+            line-height: 1.7;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .iqoo-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 106, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 106, 0, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .orange-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255, 106, 0, 0.15) 0%, transparent 50%),
+                       radial-gradient(circle at 80% 70%, rgba(255, 106, 0, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 2px solid #FF6A00;
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF6A00, #FF8C00, #FF6A00, transparent);
+            animation: iqoo-scan 4s linear infinite;
+        }
+        
+        @keyframes iqoo-scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            color: #FF6A00;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+            text-shadow: 0 0 15px rgba(255, 106, 0, 0.7);
+        }
+        
+        .iqoo-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .iqoo-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FF6A00, #FF8C00);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: #000;
+        }
+        
+        .header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            backdrop-filter: blur(10px);
+            color: #FFFFFF;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: rgba(20, 20, 20, 0.9);
+            border-radius: 18px;
+            padding: 30px;
+            border: 2px solid rgba(255, 106, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #FF6A00;
+            box-shadow: 0 15px 35px rgba(255, 106, 0, 0.4);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FF6A00, #FF8C00, #FF6A00);
+        }
+        
+        .card-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FF6A00;
+        }
+        
+        .card-corner.tl {
+            top: 10px;
+            left: 10px;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        .card-corner.tr {
+            top: 10px;
+            right: 10px;
+            border-left: none;
+            border-bottom: none;
+        }
+        
+        .card-corner.bl {
+            bottom: 10px;
+            left: 10px;
+            border-right: none;
+            border-top: none;
+        }
+        
+        .card-corner.br {
+            bottom: 10px;
+            right: 10px;
+            border-left: none;
+            border-top: none;
+        }
+        
+        .section-title {
+            color: #FF6A00;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(255, 106, 0, 0.5);
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        
+        .section-title i {
+            margin-right: 15px;
+            font-size: 1.6rem;
+            color: #FF6A00;
+        }
+        
+        .highlight {
+            background: rgba(255, 106, 0, 0.1);
+            padding: 18px;
+            border-radius: 12px;
+            margin: 18px 0;
+            border-left: 4px solid #FF6A00;
+            border-right: 1px solid rgba(255, 106, 0, 0.3);
+            position: relative;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #FF6A00, transparent);
+        }
+        
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+        
+        .time-item {
+            display: flex;
+            margin-bottom: 18px;
+            align-items: center;
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .time-item:hover {
+            border-color: #FF6A00;
+            transform: translateX(5px);
+        }
+        
+        .time {
+            background: linear-gradient(90deg, #B34700, #FF6A00);
+            color: #000000;
+            padding: 15px 20px;
+            font-weight: bold;
+            min-width: 180px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        
+        .activity {
+            padding: 15px 25px;
+            flex-grow: 1;
+            color: #FFFFFF;
+        }
+        
+        .prizes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .prize-item {
+            padding: 25px;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .prize-item:hover {
+            transform: translateY(-3px);
+            border-color: #FF6A00;
+            box-shadow: 0 10px 20px rgba(255, 106, 0, 0.2);
+        }
+        
+        .prize-item h4 {
+            color: #FF6A00;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .location-card {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            padding: 25px;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 106, 0, 0.3);
+        }
+        
+        .location-icon {
+            font-size: 2.5rem;
+            margin-right: 25px;
+            color: #FF6A00;
+            text-shadow: 0 0 10px rgba(255, 106, 0, 0.7);
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-method {
+            padding: 25px;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            border-color: #FF6A00;
+            box-shadow: 0 5px 15px rgba(255, 106, 0, 0.2);
+        }
+        
+        .contact-method h4 {
+            color: #FF6A00;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #CCCCCC;
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 106, 0, 0.3);
+            margin-top: 40px;
+        }
+        
+        .note {
+            background: rgba(255, 106, 0, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border-left: 4px solid #FF6A00;
+            border-right: 1px solid rgba(255, 106, 0, 0.3);
+        }
+        
+        .iqoo-button {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(90deg, #FF6A00, #FF8C00);
+            color: #000000;
+            border: none;
+            border-radius: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255, 106, 0, 0.4);
+            font-size: 1.1rem;
+        }
+        
+        .iqoo-button:hover {
+            background: linear-gradient(90deg, #FF8C00, #FFA500);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 106, 0, 0.6);
+        }
+        
+        .iqoo-pulse {
+            animation: iqoo-pulse 2s infinite;
+        }
+        
+        @keyframes iqoo-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 106, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0); }
+        }
+        
+        .brand-colors {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        
+        .color-orange {
+            background: #FF6A00;
+        }
+        
+        .color-black {
+            background: #000000;
+            border: 1px solid #333;
+        }
+        
+        .color-white {
+            background: #FFFFFF;
+            border: 1px solid #CCC;
+        }
+        
+        /* 预约确认弹窗样式 */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: rgba(20, 20, 20, 0.95);
+            border: 3px solid #FF6A00;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 106, 0, 0.4);
+            position: relative;
+        }
+        
+        .modal-content h3 {
+            color: #FF6A00;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .modal-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .phone-number {
+            font-size: 2rem;
+            color: #FFFFFF;
+            background: rgba(255, 106, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: 900;
+            letter-spacing: 2px;
+            border: 2px solid #FF6A00;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .modal-button {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .modal-button.call {
+            background: linear-gradient(90deg, #FF6A00, #FF8C00);
+            color: #000;
+        }
+        
+        .modal-button.close {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            border: 2px solid #666;
+        }
+        
+        .modal-button:hover {
+            transform: translateY(-3px);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #FF6A00;
+            font-size: 1.8rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.4rem;
+            }
+            
+            .iqoo-logo {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .time-item {
+                flex-direction: column;
+            }
+            
+            .time {
+                min-width: 100%;
+                margin-bottom: 0;
+            }
+            
+            .modal-content {
+                padding: 25px;
+            }
+            
+            .phone-number {
+                font-size: 1.5rem;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="iqoo-grid"></div>
+    <div class="orange-gradient"></div>
+    
+    <!-- 预约确认弹窗 -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            <h3><i class="fas fa-calendar-check"></i> 预约席位确认</h3>
+            <p>感谢您对iQOO 15 Ultra品鉴会的关注！</p>
+            <p>请致电以下号码联系我们的工作人员，完成席位预约：</p>
+            <div class="phone-number">
+                <i class="fas fa-phone"></i> 136-0602-7877
+            </div>
+            <p>预约时请告知您的姓名和联系电话，我们的工作人员将为您确认席位。</p>
+            <p><small>席位有限，请尽快预约以确保您的参与资格。</small></p>
+            <div class="modal-buttons">
+                <a href="tel:13606027877" class="modal-button call">立即拨打电话</a>
+                <button class="modal-button close" onclick="closeBookingModal()">稍后联系</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="header">
+        <div class="iqoo-title">
+            <div class="iqoo-logo">iQOO</div>
+            <h1>15 Ultra</h1>
+        </div>
+        <h2>「超感光影，即刻共鸣」—— 武汉专场品鉴会</h2>
+        <div class="subtitle">
+            性能旗舰，王者归来。诚邀您成为全球首批见证者。仅限20席，尊享首发特权。
+        </div>
+        <div class="iqoo-button iqoo-pulse" onclick="openBookingModal()">立即预约席位</div>
+        
+        <div class="brand-colors">
+            <div class="color-swatch color-orange" title="iQOO品牌橙"></div>
+            <div class="color-swatch color-black" title="iQOO品牌黑"></div>
+            <div class="color-swatch color-white" title="iQOO品牌白"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            
+            <h3 class="section-title"><i class="far fa-calendar-alt"></i> 活动时间</h3>
+            <div class="timeline">
+                <div class="time-item">
+                    <div class="time">18:30 - 19:00</div>
+                    <div class="activity">嘉宾进场、价格竞猜、自由交流</div>
+                </div>
+                <div class="time-item">
+                    <div class="time">19:00 - 21:00</div>
+                    <div class="activity">全球发布会同步观礼</div>
+                </div>
+                <div class="time-item">
+                    <div class="time">21:00 - 21:30</div>
+                    <div class="activity">公布竞猜结果、现场购机与真机品鉴</div>
+                </div>
+            </div>
+            <p><strong>日期：</strong>2025年2月4日（星期二）</p>
+        </div>
+        
+        <div class="card">
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            
+            <h3 class="section-title"><i class="fas fa-map-marker-alt"></i> 活动地点</h3>
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <div>
+                    <h4 style="color: #FF6A00;">vivo人文影像馆 · 二楼用户体验服务区</h4>
+                    <p style="color: #FFFFFF;">武汉市武昌区楚河汉街店</p>
+                    <p><em style="color: #CCCCCC;">私享科技空间，沉浸式观礼体验</em></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            
+            <h3 class="section-title"><i class="fas fa-gem"></i> 活动核心亮点</h3>
+            <div class="highlight">
+                <p><i class="fas fa-user-lock"></i> <strong>私享观礼体验：</strong>仅限20席小范围深度聚会，与同好共赏科技盛宴</p>
+            </div>
+            <div class="highlight">
+                <p><i class="fas fa-bolt"></i> <strong>即看即购特权：</strong>价格揭晓后现场直接购机，第一时间拥有</p>
+            </div>
+            <div class="highlight">
+                <p><i class="fas fa-gift"></i> <strong>超值首发礼遇：</strong>现场购机即赠价值249元 vivo TWS 蓝牙耳机 + iQOO × 有钱花联名正版摆件（价值299元）</p>
+            </div>
+            <div class="highlight">
+                <p><i class="fas fa-brain"></i> <strong>趣味价格竞猜：</strong>猜对新品定价，赢取特别定制好礼</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            
+            <h3 class="section-title"><i class="fas fa-trophy"></i> 价格竞猜奖品</h3>
+            <div class="prizes">
+                <div class="prize-item">
+                    <h4><i class="fas fa-crown"></i> 双料预言家</h4>
+                    <p>准确猜中iQOO 15 Ultra两个型号的价格</p>
+                    <p><strong style="color: #FF6A00;">奖品：</strong>有钱花定制毛毡包1个</p>
+                </div>
+                <div class="prize-item">
+                    <h4><i class="fas fa-star"></i> 精准预言家</h4>
+                    <p>准确猜中iQOO 15 Ultra一个型号的价格</p>
+                    <p><strong style="color: #FF6A00;">奖品：</strong>vivo 2025新春对联与红包套装1份</p>
+                </div>
+            </div>
+            <p style="margin-top: 15px; color: #CCCCCC;"><em>所有参与者均可获得一份iQOO主题纪念品</em></p>
+        </div>
+        
+        <div class="card">
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            
+            <h3 class="section-title"><i class="fas fa-shopping-bag"></i> 购机尊享礼</h3>
+            <p>所有现场购机用户均可获得：</p>
+            <div class="prizes">
+                <div class="prize-item">
+                    <h4><i class="fas fa-headphones"></i> 蓝牙耳机</h4>
+                    <p>价值249元 vivo TWS 蓝牙耳机</p>
+                </div>
+                <div class="prize-item">
+                    <h4><i class="fas fa-cube"></i> 联名摆件</h4>
+                    <p>价值299元 iQOO × 有钱花联名正版摆件</p>
+                </div>
+            </div>
+            <div class="highlight" style="margin-top: 20px;">
+                <p><i class="fas fa-star"></i> <strong>首发特权：</strong>前5名购机用户额外加赠iQOO定制移动电源</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            
+            <h3 class="section-title"><i class="fas fa-user-plus"></i> 报名与参与方式</h3>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h4><i class="fab fa-weixin"></i> 企业微信</h4>
+                    <p>联系vivo人文影像馆（楚河汉街店）店内导购企业微信</p>
+                </div>
+                <div class="contact-method">
+                    <h4><i class="fas fa-phone"></i> 电话预约</h4>
+                    <p>致电影像馆活动专线进行预约</p>
+                </div>
+            </div>
+            <div style="margin-top: 25px;">
+                <p><strong style="color: #FF6A00;">名额限制：仅限20席</strong>（为保证最佳体验，名额有限）</p>
+                <p><strong>优先邀请：</strong>vivo会员享有优先报名权</p>
+            </div>
+            <div class="iqoo-button" onclick="openBookingModal()" style="width: 100%; text-align: center;">立即预约席位</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-corner tl"></div>
+            <div class="card-corner tr"></div>
+            <div class="card-corner bl"></div>
+            <div class="card-corner br"></div>
+            
+            <h3 class="section-title"><i class="fas fa-info-circle"></i> 温馨提示</h3>
+            <div class="note">
+                <p><i class="fas fa-clock"></i> 活动将于18:30准时开始，建议您稍早抵达，轻松参与开场互动</p>
+                <p><i class="fas fa-credit-card"></i> 现场购机支付便捷，支持多种支付方式</p>
+                <p><i class="fas fa-bag-shopping"></i> 馆内空间温馨，请妥善保管个人随身物品</p>
+                <p><i class="fas fa-parking"></i> 汉街商圈停车位需自行安排，建议您选择公共交通或周边停车场</p>
+                <p><i class="fas fa-id-card"></i> 无需携带身份证，凭预约信息即可入场</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <h3 style="color: #FF6A00; margin-bottom: 15px;">vivo人文影像馆 馆长 敬上</h3>
+        <p style="color: #CCCCCC;">© 2025 vivo人文影像馆 楚河汉街店 版权所有</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #999999;">本活动最终解释权归vivo人文影像馆所有</p>
+        <p style="margin-top: 15px; color: #CCCCCC;">探索性能边界，感受电竞美学</p>
+    </div>
+    
+    <script>
+        // 预约弹窗功能
+        const bookingModal = document.getElementById('bookingModal');
+        
+        function openBookingModal() {
+            bookingModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+        }
+        
+        function closeBookingModal() {
+            bookingModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // 恢复背景滚动
+        }
+        
+        // 点击弹窗外部关闭弹窗
+        bookingModal.addEventListener('click', function(event) {
+            if (event.target === bookingModal) {
+                closeBookingModal();
+            }
+        });
+        
+        // ESC键关闭弹窗
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && bookingModal.style.display === 'flex') {
+                closeBookingModal();
+            }
+        });
+        
+        // 添加卡片悬停效果增强
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+        
+        // 添加iQOO风格扫描线效果
+        const header = document.querySelector('.header');
+        setInterval(() => {
+            const scanline = document.createElement('div');
+            scanline.style.position = 'absolute';
+            scanline.style.top = Math.random() * 80 + 10 + '%';
+            scanline.style.left = '0';
+            scanline.style.width = '100%';
+            scanline.style.height = '2px';
+            scanline.style.background = 'linear-gradient(90deg, transparent, rgba(255, 106, 0, 0.9), rgba(255, 140, 0, 0.9), rgba(255, 106, 0, 0.9), transparent)';
+            scanline.style.animation = 'iqoo-scan 1.5s linear';
+            header.appendChild(scanline);
+            
+            setTimeout(() => {
+                scanline.remove();
+            }, 1500);
+        }, 3000);
+        
+        // 添加角标动画
+        document.querySelectorAll('.card-corner').forEach(corner => {
+            corner.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#FF8C00';
+                this.style.transform = 'scale(1.2)';
+            });
+            
+            corner.addEventListener('mouseleave', function() {
+                this.style.borderColor = '#FF6A00';
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
